@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: salmon;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Styling */
+.container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+header p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Form Styling */
+.blog-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.blog-form input[type="text"],
+.blog-form textarea {
+    width: 100%;
+    margin: 10px 0 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+}
+
+.blog-form input[type="text"]::placeholder,
+.blog-form textarea::placeholder {
+    color: #aaa;
+}
+
+.blog-form .submit-btn {
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.blog-form .submit-btn:hover {
+    background-color: #e46b42;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .blog-form .submit-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Create Your Blog</h1>
+            <p>Share your thoughts with the world!</p>
+        </header>
+
+        <form action="{% url 'write' %}" method="POST" class="blog-form">
+            {% csrf_token %}
+            <label for="title">Blog Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter your blog title" required>
+
+            <label for="body">Blog Content</label>
+            <textarea id="body" name="body" rows="10" placeholder="Write your blog here..." required></textarea>
+
+            
+           
+            <button type="submit" class="submit-btn">Post Blog</button>
+        </form>
+    </div>
+</body>
+</html>
