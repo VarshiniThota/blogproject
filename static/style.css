@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6f5; /* Light salmon background */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fa8072; /* Salmon color for the title */
+}
+
+.blog-card {
+    border: 2px solid #fa8072; /* Salmon-colored outline */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.blog-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.blog-card .card-body {
+    padding: 15px;
+}
+
+.blog-card .card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.blog-card .card-text {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.blog-card .btn {
+    background-color: #fa8072; /* Salmon-colored button */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.blog-card .btn:hover {
+    background-color: #e76f61; /* Darker salmon shade */
+    color: white;
+}
